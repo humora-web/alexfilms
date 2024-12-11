@@ -1,0 +1,41 @@
+<p><!DOCTYPE html> <html lang=&quot;en&quot;> <head>  <meta charset=&quot;UTF-8&quot;>  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>  <title>Alex Films</title>  <style>  body {  margin: 0;  font-family: Arial, sans-serif;  background-color: #181818;  color: white;  }</p>
+
+<p> /* Header styling */  .header {  display: flex;  justify-content: space-between;  align-items: center;  background-color: #202020;  padding: 10px 20px;  position: sticky;  top: 0;  z-index: 10;  }</p>
+
+<p> .logo {  font-size: 20px;  font-weight: bold;  color: #ff0000;  }</p>
+
+<p> .header .icon {  cursor: pointer;  font-size: 24px;  color: white;  }</p>
+
+<p> /* Video grid */  .video-grid {  display: grid;  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  gap: 15px;  padding: 20px;  }</p>
+
+<p> .video {  background-color: #303030;  border-radius: 8px;  overflow: hidden;  display: flex;  flex-direction: column;  justify-content: space-between;  height: 200px;  position: relative;  }</p>
+
+<p> .thumbnail {  background-color: #555;  flex: 1;  }</p>
+
+<p> .video-info {  padding: 10px;  font-size: 14px;  color: #ccc;  }</p>
+
+<p> /* Hidden form for secret code */  .secret-form {  display: none;  position: fixed;  top: 50%;  left: 50%;  transform: translate(-50%, -50%);  background: #303030;  padding: 20px;  border-radius: 8px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  z-index: 10;  }</p>
+
+<p> .secret-form h2 {  margin: 0 0 20px 0;  color: white;  }</p>
+
+<p> .secret-form input {  width: 100%;  padding: 10px;  margin-bottom: 20px;  border: 1px solid #555;  border-radius: 5px;  background: #181818;  color: white;  }</p>
+
+<p> .secret-form button {  width: 100%;  padding: 10px;  background-color: #ff0000;  color: white;  border: none;  border-radius: 5px;  font-size: 16px;  cursor: pointer;  }</p>
+
+<p> .secret-form button:hover {  background-color: #cc0000;  }</p>
+
+<p> /* Overlay for modal effect */  .overlay {  display: none;  position: fixed;  top: 0;  left: 0;  width: 100%;  height: 100%;  background: rgba(0, 0, 0, 0.7);  z-index: 5;  }  </style> </head> <body>  <div class=&quot;header&quot;>  <div class=&quot;logo&quot;>Alex Films</div>  <div class=&quot;icon&quot; onclick=&quot;openForm()&quot;>&#55357;&#56420;</div>  </div></p>
+
+<p> <div class=&quot;video-grid&quot;>  <div class=&quot;video&quot;>  <div class=&quot;thumbnail&quot;></div>  <div class=&quot;video-info&quot;></div>  </div>  <div class=&quot;video&quot;>  <div class=&quot;thumbnail&quot;></div>  <div class=&quot;video-info&quot;></div>  </div>  <div class=&quot;video&quot;>  <div class=&quot;thumbnail&quot;></div>  <div class=&quot;video-info&quot;></div>  </div>  <div class=&quot;video&quot;>  <div class=&quot;thumbnail&quot;></div>  <div class=&quot;video-info&quot;></div>  </div>  <div class=&quot;video&quot;>  <div class=&quot;thumbnail&quot;></div>  <div class=&quot;video-info&quot;></div>  </div>  <div class=&quot;video&quot;>  <div class=&quot;thumbnail&quot;></div>  <div class=&quot;video-info&quot;></div>  </div>  </div></p>
+
+<p> <!-- Secret Code Form -->  <div class=&quot;overlay&quot; id=&quot;overlay&quot;></div>  <div class=&quot;secret-form&quot; id=&quot;secretForm&quot;>  <h2>Enter Access Code</h2>  <form action=&quot;test.html&quot; method=&quot;GET&quot; onsubmit=&quot;return validateCode()&quot;>  <input type=&quot;text&quot; id=&quot;code&quot; name=&quot;code&quot; placeholder=&quot;Enter code...&quot; required>  <button type=&quot;submit&quot;>Submit</button>  </form>  </div></p>
+
+<p> <script>  const secretForm = document.getElementById(&quot;secretForm&quot;);  const overlay = document.getElementById(&quot;overlay&quot;);</p>
+
+<p> function openForm() {  secretForm.style.display = &quot;block&quot;;  overlay.style.display = &quot;block&quot;;  }</p>
+
+<p> function closeForm() {  secretForm.style.display = &quot;none&quot;;  overlay.style.display = &quot;none&quot;;  }</p>
+
+<p> overlay.addEventListener(&quot;click&quot;, closeForm);</p>
+
+<p> function validateCode() {  const inputCode = document.getElementById(&quot;code&quot;).value;  return inputCode === &quot;alexiscool&quot;; // Only allow correct code to submit the form  }  </script> </body> </html></p>
