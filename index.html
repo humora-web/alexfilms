@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Films</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #181818;
+      color: white;
+    }
+
+
+    /* Header styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #202020;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff0000;
+    }
+
+
+    .header .icon {
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+    }
+
+
+    /* Video grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+
+    .video {
+      background-color: #303030;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 200px;
+      position: relative;
+    }
+
+
+    .thumbnail {
+      background-color: #555;
+      flex: 1;
+    }
+
+
+    .video-info {
+      padding: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+
+    /* Hidden form for secret code */
+    .secret-form {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #303030;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+    }
+
+
+    .secret-form h2 {
+      margin: 0 0 20px 0;
+      color: white;
+    }
+
+
+    .secret-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #555;
+      border-radius: 5px;
+      background: #181818;
+      color: white;
+    }
+
+
+    .secret-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+
+    .secret-form button:hover {
+      background-color: #cc0000;
+    }
+
+
+    /* Overlay for modal effect */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Alex Films</div>
+    <div class="icon" onclick="openForm()">👤</div>
+  </div>
+
+
+  <div class="video-grid">
+    <div class="video">
+      <div class="thumbnail"></div>
+      <div class="video-info"></div>
+    </div>
+    <div class="video">
+      <div class="thumbnail"></div>
+      <div class="video-info"></div>
+    </div>
+    <div class="video">
+      <div class="thumbnail"></div>
+      <div class="video-info"></div>
+    </div>
+    <div class="video">
+      <div class="thumbnail"></div>
+      <div class="video-info"></div>
+    </div>
+    <div class="video">
+      <div class="thumbnail"></div>
+      <div class="video-info"></div>
+    </div>
+    <div class="video">
+      <div class="thumbnail"></div>
+      <div class="video-info"></div>
+    </div>
+  </div>
+
+
+  <!-- Secret Code Form -->
+  <div class="overlay" id="overlay"></div>
+  <div class="secret-form" id="secretForm">
+    <h2>Enter Access Code</h2>
+    <form action="test.html" method="GET" onsubmit="return validateCode()">
+      <input type="text" id="code" name="code" placeholder="Enter code..." required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+
+  <script>
+    const secretForm = document.getElementById("secretForm");
+    const overlay = document.getElementById("overlay");
+
+
+    function openForm() {
+      secretForm.style.display = "block";
+      overlay.style.display = "block";
+    }
+
+
+    function closeForm() {
+      secretForm.style.display = "none";
+      overlay.style.display = "none";
+    }
+
+
+    overlay.addEventListener("click", closeForm);
+
+
+    function validateCode() {
+      const inputCode = document.getElementById("code").value;
+      return inputCode === "alexiscool"; // Only allow correct code to submit the form
+    }
+  </script>
+</body>
+</html>
