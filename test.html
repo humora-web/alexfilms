@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Films</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #181818;
+      color: white;
+    }
+
+
+    /* Header styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #202020;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff0000;
+    }
+
+
+    /* Video grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+
+    .video {
+      background-color: #303030;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+
+    .video iframe {
+      width: 100%;
+      height: 170px;
+      border: none;
+    }
+
+
+    .video-info {
+      padding: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Alex Films</div>
+  </div>
+
+
+  <div class="video-grid">
+    <div class="video">
+      <iframe 
+        src="https://www.youtube.com/embed/uhzy7JaU2Zc" 
+        title="YouTube Video Player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <div class="video-info">Your First Video</div>
+    </div>
+
+
+    <!-- Placeholder for additional playable videos -->
+    <div class="video">
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="Video Player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <div class="video-info">Second Video</div>
+    </div>
+
+
+    <div class="video">
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="Video Player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <div class="video-info">Third Video</div>
+    </div>
+  </div>
+</body>
+</html>
